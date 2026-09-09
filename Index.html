@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbie World | Você pode ser tudo!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Barbie.css">
+</head>
+<body class="theme-pink">
+
+    <header>
+        <div class="logo">Barbie</div>
+        <div class="theme-switcher">
+            <span>Closet:</span>
+            <button class="theme-btn" style="background: #ff1493;" onclick="mudarTema('theme-pink')" title="Clássico Pink"></button>
+            <button class="theme-btn" style="background: #8a2be2;" onclick="mudarTema('theme-purple')" title="Magia Roxa"></button>
+            <button class="theme-btn" style="background: #daa520;" onclick="mudarTema('theme-gold')" title="Glamour Dourado"></button>
+        </div>
+        <nav>
+            <a href="#">Início</a>
+            <a href="#fashion">Teste de Moda</a>
+            <a href="#quiz">Quiz</a>
+            <a href="#features">Coleções</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1 id="hero-title">Você pode ser tudo o que quiser!</h1>
+        <p>Monte os looks perfeitos para a Barbie e para o Ken arrasarem no Malibu Runway.</p>
+        <button class="btn" onclick="mensagemMagica()">✨ Ativar Magia Barbie</button>
+    </section>
+
+    <!-- Teste de Moda Barbie & Ken -->
+    <section class="fashion-section" id="fashion">
+        <h2>🛍️ Closet dos Sonhos: Teste de Moda Barbie & Ken</h2>
+        <p>Escolha as peças para cada um e descubra se o casal está pronto para o evento!</p>
+        
+        <div class="fashion-container">
+            <!-- Look da Barbie -->
+            <div class="wardrobe-column">
+                <h3>💖 Look da Barbie</h3>
+                <div class="select-group">
+                    <label>Vestido / Estilo:</label>
+                    <select id="barbie-vestido" onchange="avaliarModa()">
+                        <option value="casual">Vestido Floral de Verão</option>
+                        <option value="gala">Vestido Longo de Gala Rosa</option>
+                        <option value="profissional">Tailor Power Suit Executivo</option>
+                        <option value="praia">Saída de Praia Neon</option>
+                    </select>
+                </div>
+                <div class="select-group">
+                    <label>Acessório Principal:</label>
+                    <select id="barbie-acessorio" onchange="avaliarModa()">
+                        <option value="bolsa">Bolsa de Grife Glitter</option>
+                        <option value="tiara">Tiara de Princesa</option>
+                        <option value="oculos">Óculos de Sol Retrô</option>
+                        <option value="laptop">Laptop Prateado</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Look do Ken -->
+            <div class="wardrobe-column">
+                <h3>💙 Look do Ken</h3>
+                <div class="select-group">
+                    <label>Roupa / Estilo:</label>
+                    <select id="ken-roupa" onchange="avaliarModa()">
+                        <option value="casual">Camisa Social Slim & Jeans</option>
+                        <option value="gala">Smoking Clássico com Gravata Borboleta</option>
+                        <option value="praia">Regata Surfista & Bermuda Colorida</option>
+                        <option value="skate">Jaqueta de Colegial & Tênis</option>
+                    </select>
+                </div>
+                <div class="select-group">
+                    <label>Acessório Principal:</label>
+                    <select id="ken-acessorio" onchange="avaliarModa()">
+                        <option value="relogio">Relógio Dourado</option>
+                        <option value="prancha">Prancha de Surf</option>
+                        <option value="skate">Skate Estilizado</option>
+                        <option value="pasta">Pasta Executiva de Couro</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="fashion-result-box">
+            <h3>✨ Veredito do Estilista de Malibu</h3>
+            <p id="fashion-feedback">Selecione as peças acima para ver o veredito do look do casal!</p>
+        </div>
+    </section>
+
+    <!-- Seção de Coleções -->
+    <section class="features" id="features">
+        <div class="card">
+            <h3>✨ Moda & Estilo</h3>
+            <p>Acompanhe as últimas tendências direto das passarelas de Malibu para o seu guarda-roupa.</p>
+        </div>
+        <div class="card">
+            <h3>👩‍💻 Profissões</h3>
+            <p>De astronauta a desenvolvedora de software: inspire-se com todas as carreiras incríveis da Barbie.</p>
+        </div>
+        <div class="card">
+            <h3>🏡 Dreamhouse</h3>
+            <p>Faça um tour virtual pela casa dos sonhos mais famosa e estilosa do mundo.</p>
+        </div>
+    </section>
+
+    <!-- Quiz Interativo -->
+    <section class="quiz-section" id="quiz">
+        <h2>💖 Descubra sua Profissão Ideal</h2>
+        <p>Escolha o seu ambiente de trabalho favorito:</p>
+        <div class="quiz-options">
+            <button class="quiz-option-btn" onclick="responderQuiz('tecnologia')">💻 Linhas de Código & Inovação</button>
+            <button class="quiz-option-btn" onclick="responderQuiz('arte')">🎨 Estúdio de Arte & Moda</button>
+            <button class="quiz-option-btn" onclick="responderQuiz('ciencia')">🚀 Laboratório & Espaço</button>
+        </div>
+        <div id="quiz-result"></div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Barbie World.</p>
+    </footer>
+
+    <script src="Script.js"></script>
+</body>
+</html>
